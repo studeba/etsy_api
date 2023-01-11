@@ -542,7 +542,7 @@ module EtsyApi
       unless validator.valid?(status.downcase)
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end
-      @status = status.downcase
+      @status = status
     end
 
     # Custom attribute writer method with validation
