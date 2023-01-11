@@ -486,8 +486,8 @@ module EtsyApi
       return false if !@receipt_type.nil? && @receipt_type < 0
       return false if !@seller_user_id.nil? && @seller_user_id < 1
       return false if !@buyer_user_id.nil? && @buyer_user_id < 1
-      # status_validator = EnumAttributeValidator.new('String', ["paid", "completed", "open", "payment processing", "canceled"])
-      # return false unless status_validator.valid?(@status)
+      status_validator = EnumAttributeValidator.new('String', ["paid", "completed", "open", "payment processing", "canceled"])
+      return false unless status_validator.valid?(@status)
       return false if !@create_timestamp.nil? && @create_timestamp < 946684800
       return false if !@created_timestamp.nil? && @created_timestamp < 946684800
       return false if !@update_timestamp.nil? && @update_timestamp < 946684800
@@ -538,10 +538,10 @@ module EtsyApi
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      # validator = EnumAttributeValidator.new('String', ["paid", "completed", "open", "payment processing", "canceled"])
-      # unless validator.valid?(status)
-      #   fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
-      # end
+      validator = EnumAttributeValidator.new('String', ["paid", "completed", "open", "payment processing", "canceled"])
+      unless validator.valid?(status)
+        fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
+      end
       @status = status
     end
 
