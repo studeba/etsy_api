@@ -11,5 +11,5 @@ OpenAPI Generator version: 6.2.1
 =end
 
 module EtsyApi
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'
 end
