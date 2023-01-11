@@ -539,10 +539,10 @@ module EtsyApi
     # @param [Object] status Object to be assigned
     def status=(status)
       validator = EnumAttributeValidator.new('String', ["paid", "completed", "open", "payment processing", "canceled"])
-      unless validator.valid?(status)
+      unless validator.valid?(status.downcase)
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end
-      @status = status
+      @status = status.downcase
     end
 
     # Custom attribute writer method with validation
