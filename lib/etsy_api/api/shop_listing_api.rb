@@ -1052,7 +1052,7 @@ module EtsyApi
 
       allowable_values = ["active", "inactive", "sold_out", "draft", "expired"]
       if @api_client.config.client_side_validation && opts[:'state'] && !allowable_values.include?(opts[:'state'])
-        fail ArgumentError, "invalid value for \"state\", must be one of #{allowable_values}"
+        # fail ArgumentError, "invalid value for \"state\", must be one of #{allowable_values}"
       end
       if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 100
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling ShopListingApi.get_listings_by_shop, must be smaller than or equal to 100.'
@@ -1549,7 +1549,7 @@ module EtsyApi
       end
       allowable_values = ["active", "inactive"]
       if @api_client.config.client_side_validation && opts[:'state'] && !allowable_values.include?(opts[:'state'])
-        fail ArgumentError, "invalid value for \"state\", must be one of #{allowable_values}"
+        # fail ArgumentError, "invalid value for \"state\", must be one of #{allowable_values}"
       end
       allowable_values = ["physical", "download", "both"]
       if @api_client.config.client_side_validation && opts[:'type'] && !allowable_values.include?(opts[:'type'])
@@ -1775,7 +1775,7 @@ module EtsyApi
       end
       allowable_values = ["active", "inactive"]
       if @api_client.config.client_side_validation && opts[:'state'] && !allowable_values.include?(opts[:'state'])
-        fail ArgumentError, "invalid value for \"state\", must be one of #{allowable_values}"
+        # fail ArgumentError, "invalid value for \"state\", must be one of #{allowable_values}"
       end
       allowable_values = ["physical", "download", "both"]
       if @api_client.config.client_side_validation && opts[:'type'] && !allowable_values.include?(opts[:'type'])

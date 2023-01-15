@@ -693,7 +693,7 @@ module EtsyApi
     def state=(state)
       validator = EnumAttributeValidator.new('String', ["active", "inactive", "sold_out", "draft", "expired"])
       unless validator.valid?(state)
-        fail ArgumentError, "invalid value for \"state\", must be one of #{validator.allowable_values}."
+        # fail ArgumentError, "invalid value for \"state\", must be one of #{validator.allowable_values}."
       end
       @state = state
     end
