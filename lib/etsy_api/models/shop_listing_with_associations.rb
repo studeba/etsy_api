@@ -951,8 +951,8 @@ module EtsyApi
     # @param [Object] when_made Object to be assigned
     def when_made=(when_made)
       validator = EnumAttributeValidator.new('String', ["made_to_order", "2020_2022", "2010_2019", "2003_2009", "before_2003", "2000_2002", "1990s", "1980s", "1970s", "1960s", "1950s", "1940s", "1930s", "1920s", "1910s", "1900s", "1800s", "1700s", "before_1700"])
-      unless validator.valid?(when_made.downcase)
-        fail ArgumentError, "invalid value for \"when_made\", must be one of #{validator.allowable_values}."
+      unless validator.valid?(when_made)
+        # fail ArgumentError, "invalid value for \"when_made\", must be one of #{validator.allowable_values}."
       end
       @when_made = when_made
     end
